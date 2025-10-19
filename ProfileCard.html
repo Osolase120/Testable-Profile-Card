@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="ProfileCard.css">
+</head>
+<body>
+
+    <main>
+
+    <article>
+        <header>
+
+             <figure>
+
+            <img class="icons8-avatar" src="./images/icons8-avatar-100.png" alt="Avater" data-testid="test-user-avatar">
+
+        </figure>
+
+            <h2 data-testid="test-user-name">OsolaseDevs</h2>
+
+            <p data-testid="test-user-time">Current Time (ms): <span id="milliseconds"></span></p>
+
+            <p data-testid="test-user-bio">"I'm a frontend developer with passion for building responsive, user-friendly web interfaces using HTML, CSS, and JavaScript and modern frameworks like React."</p>
+
+        </header>
+
+        <hr>
+
+        <nav>
+
+            <h3>Let's connect</h3>
+            <ul data-testid="test-user-social-links">
+                <li data-testid="test-user-social-twitter"><a href="https://x.com/osolase2?s=11" target="_blank"><img class="icons8-twitter" src="./images/icons8-twitter-100.png" alt="twitter-icon"></a></li>
+                <li data-testid="test-user-social-Git"><a href="https://github.com/Osolase120" target="_blank"><img class="icons8-github" src="./images/icons8-github-96.png" alt="github-icon"></a></li>
+            </ul>
+        </nav>
+
+        <hr>
+
+        <section class="last">
+
+        <section>
+            <h3>Hobbies</h3>
+
+            <ul data-testid="test-user-hobbies">
+                <li>Coding</li>
+                <li>Football</li>
+                <li>Reading</li>
+                <li>Music</li>
+                <li>Politics</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Dislikes</h3>
+
+            <ul data-testid="test-user-dislikes">
+                <li>Talking</li>
+                <li>Noise</li>
+                <li>Bullies</li>
+                <li>Religious fanatics</li>
+            </ul>
+        </section>
+
+        </section>
+
+    </article>
+
+    </main>
+
+    
+  <script>
+  function updateMilliseconds() {
+    const currentTime = Date.now();  
+    document.getElementById("milliseconds").textContent = currentTime;
+  }
+
+  updateMilliseconds(); 
+  setInterval(updateMilliseconds, 1000); 
+</script
+    
+</body>
+</html>
