@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="Contact.css">
+
+</head>
+<body>
+
+    <main>
+
+         <header>
+            
+            <nav>
+                <a href="./ProfileCard.html">Home</a>
+
+                <a href="./Contact.html">Contact Us</a>
+
+                <a href="./About.html">About</a>
+            </nav>
+
+        </header>
+
+    <form action="" id="form">
+
+        <div class="form-control">
+            <label for="Full Name" data-testid="test-contact-name">Full Name</label>
+
+            <input type="text" name="" id="name" aria-describedby="nameHelp">
+
+            <small data-testid="test-contact-error-name"></small>
+        </div>
+
+        
+        <div class="form-control">
+            <label for="Email" data-testid="test-contact-email">Email</label>
+
+            <input type="text" name="" id="email" aria-describedby="emailHelp">
+
+            <small data-testid="test-contact-error-email"></small>
+        </div>
+
+        <div class="form-control">
+            <label for="Subject" data-testid="test-contact-subject">Subject</label>
+
+            <input type="text" name="" id="subject" aria-describedby="subjectHelp">
+
+            <small data-testid="test-contact-error-subject"></small>
+        </div>
+
+        <div class="form-control">
+            <label for="Message" data-testid="test-contact-message">Message</label>
+
+            <textarea name="" id="textArea" aria-describedby="textHelp"></textarea>
+
+            <small data-testid="test-contact-error-message"></small>
+        </div>
+
+        <button type="submit" data-testid="test-contact-submit" onclick="showSuccessMessage()">Submit</button>
+    </form>
+
+    <section class="alert hidden" id="section">
+
+        <img src="./images/icon-complete.svg" alt="">
+
+        <div>Form submitted successfully</div>
+    </section>
+
+    </main>
+
+    <script>
+const form = document.getElementById('form');
+const name =document.getElementById('name');
+const email = document.getElementById('email');
+const subject = document.getElementById('subject');
+const textArea = document.getElementById('textArea');
+const section = document.getElementById('section')
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+     checkInputs();
+
+     showSuccessMessage();
+
+});
+
+function checkInputs() {
+    const nameValue = name.value.trim();
+    const emailValue = email.value.trim();
+    const subjectValue = subject.value.trim();
+    const textAreaValue = textArea.value.trim();
+
+    if (nameValue === '') {
+        setErrorfor(name, 'Name cannot be blank');
+    }else {
+        setSuccessfor(name);
+    }
+
+    if (emailValue === '') {
+        setErrorfor(email, 'Email cannot be blank'); 
+    } else if (!isEmail(emailValue)) {
+        setErrorfor(email, 'Please enter a valid email'); 
+    } else {
+        setSuccessfor(email);
+    }
+
+    if (subjectValue === '') {
+        setErrorfor(subject, 'Subject cannot be blank');
+    }else {
+        setSuccessfor(subject);
+    }
+
+    if (textAreaValue === '') {
+        setErrorfor(textArea, 'Textarea cannot be blank');
+    }else if (textAreaValue.lenght < 10) {
+        setErrorfor(textArea, 'Message must not be less than 10 characters');
+    } else{
+        setSuccessfor(textArea)
+    }
+}
+
+function setErrorfor(input, message) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small');
+
+    small.innerText = message;
+    formControl.className = 'form-control error';
+}
+
+function setSuccessfor(input) {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success';
+}
+
+function isEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function showSuccessMessage() {
+    const alertSection = document.getElementById('section');
+  
+   alertSection.classList.remove('hidden');
+}
+    </script>
+    
+</body>
+</html>

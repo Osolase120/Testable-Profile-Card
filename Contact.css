@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: "Inter", serif;
+    background: linear-gradient(#9fe490, #957acf);
+    /* background-color: black; */
+}
+
+header {
+    position: relative;
+    top: 90px;
+    margin-left: 50px;
+    height: 50px; 
+    width: 400px;
+    background-color: hsl(0, 0%, 100%);  
+    border-radius: 8px; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    padding: 15px;
+}
+
+form {
+    position: relative;
+    top: 100px;
+    left: 50px;
+    padding: 30px 30px;
+    width: 400px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 8px;
+}
+
+.form-control {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-family: inherit;
+}
+
+.form-control input {
+    display: block;
+    border: 1px solid rgb(98, 101, 101);
+    border-radius: 6px;
+    height: 40px;
+    width: 100%;
+    outline: 0;
+}
+
+.form-control small {
+    position: absolute;
+    bottom: -5px;
+    font-family: inherit;
+    visibility: hidden;
+}
+
+/* .form-control.success input {
+    border-color: hsl(122, 78%, 41%);
+} */
+
+.form-control.error input {
+    border-color: hsl(0, 93%, 68%);
+}
+
+.form-control.error textarea {
+    border-color: hsl(0, 93%, 68%);
+}
+
+.form-control.error small {
+    visibility: visible;
+    color: hsl(0, 93%, 68%);
+}
+
+textarea {
+    display: block;
+    height: 130px;
+    width: 100%;
+    outline: 0;
+    border: 1px solid rgb(98, 101, 101);
+    border-radius: 6px;
+}
+
+button {
+    position: relative;
+    top: 10px;
+    height: 45px;
+    width: 100%;
+    font-family: inherit;
+    font-size: 18px;
+}
+
+.alert {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    padding: 20px 90px;
+    height: 60px;
+    width: 400px;
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 8px;
+    font-family: inherit
+}
+
+img {
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    height: 40px;
+    z-index: 1;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 375px) {
+
+    header {
+    position: relative;
+    top: 100px;
+    margin-left: 12px;
+    height: 50px; 
+    width: 350px;
+    background-color: hsl(0, 0%, 100%);  
+    border-radius: 8px; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    padding: 15px;
+}
+
+    form {
+    position: relative;
+    top: 110px;
+    left: 12px;
+    padding: 30px 30px;
+    width: 350px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 8px;
+}
+
+.alert {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    padding: 20px 65px;
+    height: 60px;
+    width: 350px;
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 8px;
+    font-family: inherit
+}
+
+img {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    height: 40px;
+    z-index: 1;
+}
+
+}
+
+@media screen and (min-width:600px) {
+
+    header {
+    position: relative;
+    top: 100px;
+    margin-left: 5rem;
+    height: 50px; 
+    width: 600px;
+    background-color: hsl(0, 0%, 100%);  
+    border-radius: 8px; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    padding: 15px;
+}
+
+    form {
+    position: relative;
+    top: 110px;
+    left: 5rem;
+    padding: 30px 30px;
+    width: 600px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 8px;
+}
+
+.alert {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    padding: 20px 90px;
+    height: 60px;
+    width: 600px;
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 8px;
+    font-family: inherit
+}
+
+}
+
+@media screen and (min-width: 992px) {
+
+    header {
+    position: relative;
+    top: 90px;
+    margin-left: 30rem;
+    height: 50px; 
+    width: 600px;
+    background-color: hsl(0, 0%, 100%);  
+    border-radius: 8px; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    padding: 15px;
+}
+
+    form {
+    position: relative;
+    top: 110px;
+    left: 30rem;
+    padding: 30px 30px;
+    width: 600px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 8px;
+}
+
+.alert {
+    position: absolute;
+    top: 20px;
+    left: 30rem;
+    padding: 20px 90px;
+    height: 60px;
+    width: 600px;
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 8px;
+    font-family: inherit
+}
+
+}
